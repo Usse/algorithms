@@ -1,7 +1,5 @@
 public class KarateChop {
 
-  // public KarateChop() {}
-
   static int iterativeChop(int elem , int[] arr) {
     int maxIndex = arr.length;
     int minIndex = 0;
@@ -18,6 +16,11 @@ public class KarateChop {
         return pivot;
       }
     }
+    return -1;
+  }
+
+
+  static int recursiveChop(int elem, int[] arr) {
     return -1;
   }
 

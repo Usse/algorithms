@@ -5,40 +5,40 @@ public class Tests {
 
   public static KarateChop KC = new KarateChop();
 
+  // Iterative
   @Test
-  public void testEmptyArray() {
+  public void iTestEmptyArray() {
     int[] emptyArray = {};
-    assertEquals(KC.iterativeChop(4,emptyArray),-1);
+    assertEquals(-1,KC.iterativeChop(4,emptyArray));
   }
 
   @Test
-  public void testSingleElement() {
+  public void iTestSingleElement() {
     int[] singleItemArray = {1};
-    assertEquals(KC.iterativeChop(1,singleItemArray),0);
+    assertEquals(0,KC.iterativeChop(1,singleItemArray));
   }
 
   @Test
-  public void testSmokeCase() {
+  public void iTestSmokeCase() {
     int[] normalArray = {1,2,3,4,5,6,7,8,9};
-    assertEquals(KC.iterativeChop(3,normalArray),2);
+    assertEquals(2,KC.iterativeChop(3,normalArray));
   }
 
   @Test
-  public void testBigNumber() {
+  public void iTestBigNumber() {
     int[] normalArray = {1,2,3,4,5,6,7,8,9};
-    assertEquals(KC.iterativeChop(55,normalArray),-1);
+    assertEquals(-1,KC.iterativeChop(55,normalArray));
   }
 
   @Test
-  public void testMissingNumber() {
+  public void iTestMissingNumber() {
     int[] normalArray = {1,2,3,4,6,7,8,9};
-    assertEquals(KC.iterativeChop(5,normalArray),-1);
+    assertEquals(-1,KC.iterativeChop(5,normalArray));
   }
 
   @Test
-  public void testNegativeNumber() {
+  public void iTestNegativeNumber() {
     int[] normalArray = {1,2,3,4,5,6,7,8,9};
-    assertEquals(KC.iterativeChop(-35,normalArray),-1);
+    assertEquals(-1,KC.iterativeChop(-35,normalArray));
   }
-
 }
