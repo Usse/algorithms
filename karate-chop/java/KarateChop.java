@@ -21,8 +21,25 @@ public class KarateChop {
 
 
   static int recursiveChop(int elem, int[] arr) {
-    return -1;
+    if(arr.length < 0 ) {return -1;}
+    return recursiveInner(elem, arr, 0, arr.length-1);
   }
+
+  static int recursiveInner(int elem, int[] arr, int minIndex, int maxIndex) {
+    if(minIndex > maxIndex) { return -1; }
+
+    int pivot = (minIndex + maxIndex) /2;
+    if(arr[pivot] > elem) {
+      return recursiveInner(elem, arr, minIndex, pivot-1);
+    } else if(arr[pivot] < elem) {
+      return recursiveInner(elem, arr, pivot+1, maxIndex);
+    } else {
+      return pivot;
+    }
+    // return -1;
+  }
+
+
 
   public static void main(String[] args) {
     System.out.println("KarateChop!");
