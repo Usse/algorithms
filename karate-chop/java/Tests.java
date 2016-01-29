@@ -41,4 +41,41 @@ public class Tests {
     int[] normalArray = {1,2,3,4,5,6,7,8,9};
     assertEquals(-1,KC.iterativeChop(-35,normalArray));
   }
+
+  // Recursive
+  @Test
+  public void rTestEmptyArray() {
+    int[] emptyArray = {};
+    assertEquals(-1,KC.recursiveChop(4,emptyArray));
+  }
+
+  @Test
+  public void rTestSingleElement() {
+    int[] singleItemArray = {1};
+    assertEquals(0,KC.recursiveChop(1,singleItemArray));
+  }
+
+  @Test
+  public void rTestSmokeCase() {
+    int[] normalArray = {1,2,3,4,5,6,7,8,9};
+    assertEquals(2,KC.recursiveChop(3,normalArray));
+  }
+
+  @Test
+  public void rTestBigNumber() {
+    int[] normalArray = {1,2,3,4,5,6,7,8,9};
+    assertEquals(-1,KC.recursiveChop(55,normalArray));
+  }
+
+  @Test
+  public void rTestMissingNumber() {
+    int[] normalArray = {1,2,3,4,6,7,8,9};
+    assertEquals(-1,KC.recursiveChop(5,normalArray));
+  }
+
+  @Test
+  public void rTestNegativeNumber() {
+    int[] normalArray = {1,2,3,4,5,6,7,8,9};
+    assertEquals(-1,KC.recursiveChop(-35,normalArray));
+  }
 }
